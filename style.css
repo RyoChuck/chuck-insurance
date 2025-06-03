@@ -1,156 +1,196 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  .header {
-    width: 100%;
-    height: 70px; /* ← 高さを明示（好みで調整） */
-    display: flex;
-    justify-content: center;  /* 横中央 */
-    align-items: center;      /* 縦中央 */
-    background-color: #ffffff;
-    border-bottom: 1px solid #ccc;
-    font-size: 24px;
-    font-family: 'Libre Baskerville', serif;
-  }
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  font-size: 24px;
+  font-family: 'Libre Baskerville', serif;
+}
 
+.ad-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
 
+.ad-banner {
+  width: 100%;
+  max-width: 800px;
+  background-color: #e9ecef;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  font-family: 'Libre Baskerville', serif;
+}
 
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-family: 'Libre Baskerville', serif;
+}
 
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+}
 
-  .ad-container {
+.left {
+  background-color: rgb(248, 249, 250);
+  font-size: 12px;
+}
 
-    display: flex;
-    justify-content: center;
-    background-color: #f8f9fa;
-    
-  }
-  
+.center {
+  flex: 2.5;
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
 
+.topic-box {
+  background-color: #000203;
+  border-left: 6px solid #007acc;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .ad-banner {
-   
-    width: 100%;
-    max-width: 800px; /* 中央カラムに近い幅 */
-    background-color: #e9ecef;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-    font-size: 14px;
-    font-family: 'Libre Baskerville', serif;
-    
-   
-  
-  } 
+.topic-box:hover {
+  background-color: #e6f0ff;
+  color: #000000;
+}
+
+.topic-box blockquote.twitter-tweet {
+  margin: 0 auto !important;
+}
+
+.right {
+  background-color: #f1f3f5;
+  flex: 0.5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tweet-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.twitter-embed-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.footer-bar {
+  background-color: #eaeaea;
+  padding: 15px 30px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-left .footer-title {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer-center select {
+  font-size: 13px;
+  padding: 4px;
+}
+
+.footer-right a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+}
+
+.weather-bar {
+  background-color: #000000;
+  text-align: right;
+  padding: 1px 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: hsl(180, 14%, 99%);
+  border-bottom: 1px solid #ccc;
+  max-height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    font-family: 'Libre Baskerville', serif;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
   }
-  
-  .column {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    font-family: 'Libre Baskerville', serif;
+
+  .left,
+  .center,
+  .right {
+    flex: none;
+    width: 100%;
+    padding-left: 15px;
+    padding-right:15px;
+    border: none;
   }
-  
-  .left {
-    background-color: rgb(248, 249, 250);
-    font-family: 'Libre Baskerville', serif;
-    font-size: 12px;
+
+  .ad-banner,
+  .topic-box,
+  .tweet-wrapper,
+  .twitter-embed-wrapper {
+    max-width: 100% !important;
+    width: 100%;
+    margin: 0 auto;
   }
-  
-  .center {
-    flex: 2.5; 
-    background-color: #ffffff;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-    font-family: 'Libre Baskerville', serif;
+
+  .header h1 {
+    font-size: 30px;
+    text-align: center;
   }
 
   .topic-box {
-    background-color: #000203;
-    border-left: 6px solid #007acc;
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
-  }
-  
-  .topic-box:hover {
-    background-color: #e6f0ff;
-    color: #000000;
-  }
-  
-  .topic-box blockquote.twitter-tweet {
-    margin: 0 auto !important;
-  }
-
-
-
-
-
-  .right {
-    background-color: #f1f3f5;
-    font-family: 'Libre Baskerville', serif;
-  }
-  
-  .tweet-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  .twitter-embed-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-
-
-  .footer-bar {
-    background-color: #eaeaea;
-    padding: 15px 30px;
-    border-top: 1px solid #ccc;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-left .footer-title {
-    font-family: 'Libre Baskerville', serif;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .footer-center select {
-    font-size: 13px;
-    padding: 4px;
-  }
-  
-  .footer-right a {
-    text-decoration: none;
-    color: #333;
-    font-weight: normal;
+    margin: 15px 10px;
   }
 
   .weather-bar {
-    background-color: #000000;
-    text-align: right;
-    padding: 1px 0;
-    font-size: 13px;
-    font-weight: bold;
-    color: hsl(180, 14%, 99%);
-    border-bottom: 1px solid #ccc;
-    max-height:50px;
- 
+    font-size: 11px;
+    text-align: center;
   }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
